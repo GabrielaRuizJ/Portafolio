@@ -29,7 +29,7 @@ body{
       aspect-ratio:auto;
 }
 .imagenfondo{
-    background-image:url(fondoazul.webp);
+    background-image:url(../images/fondoazul.webp);
     background-repeat:no-repeat;
     background-attachment:fixed;
     background-size:cover;
