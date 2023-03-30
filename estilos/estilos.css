@@ -246,22 +246,21 @@ body{
     width:300px;
     bottom:0;
 }
-.contact-form{margin: 0px auto;
-    display: flex;
-    flex-direction: column;
-}
+
 .contact-form a{
 text-decoration: none;
 color: #000;
 }
+
 .contact-form i{
     color: #6EA3F9;
 }
 .contact-form{
     display:flex;
     flex-direction:column;
-    /*width:30vw;*/
+    margin: 0px auto;
     margin-top:2em;
+    padding: 0px 1517px;
 }
 .contact-form h4{
     font-size: 2.5em;
