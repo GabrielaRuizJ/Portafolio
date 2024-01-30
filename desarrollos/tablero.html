@@ -1,14 +1,60 @@
-html lang="es">
+<html lang="es">
     <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-        <title>Tablero de reservas</title>
+        <link rel="stylesheet" href="css/tableroEstilos.css">
+        <title>Tablero de gestión de reservas | por Ing. Gabriela Ruiz</title>
     </head>
     <body>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <div class="container-fluid">
+              <div id="titulo"><h5 class="display-6">Reservas deportivas del d&iacute;a <span id="datfecha"></span> </h5></div>
+            <div>
+                <table class="table tableFixHead">
+                    <thead id="tdhorarios"></thead>
+                    <tbody id="tdturnos"></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Modal para crear una reserva -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear una reserva</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="limpiarv()" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                    <div class="col"> <label for="nsocios" class="col-form-label">Nombre jugador:</label>
+                        <input  type="text" class="form-control" id="nombrejugador" ></div>
+                    <div class="col"> <label for="esocios" class="col-form-label">Email jugador:</label>
+                        <input  type="text" class="form-control" id="emailjugador" ></div>
+                  </div>
+                  <div class="row">
+                    <div class="col"> <label for="horareserva" class="col-form-label">Hora reserva:</label>
+                    <input  type="text" readonly class="form-control" id="horareserva"></div>
+                    <div class="col">
+                    <label for="canchareserva"  class="col-form-label">Cancha:</label>
+                    <input  type="text" readonly class="form-control" id="canchareserva"></div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button"  class="btn btn-secondary" onclick="limpiarv()" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" onclick="guardarr()"  class="btn btn-primary">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/tableroScript.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        
     </body>
 </html>
